@@ -58,7 +58,10 @@ class TestAPIMethods:
     @pytest.mark.parametrize("value", [-1, 0, 9999])
     def test_delete_method_negative(self, value):
         response = Locations.delete(value)
+        #response_body = response.json()
         assert 404 == response.status_code
+	print("lol")
+        #assert response_body.get("error") is not None
 
     def test_put_method_positive(self):
         response = Locations.put(self.new_data, self.id)
