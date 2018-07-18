@@ -60,7 +60,6 @@ class TestAPIMethods:
         response = Locations.delete(value)
         #response_body = response.json()
         assert 404 == response.status_code
-	print("lol")
         #assert response_body.get("error") is not None
 
     def test_put_method_positive(self):
