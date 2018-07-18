@@ -42,7 +42,7 @@ class TestAPIMethods:
         assert str(response_body.get("id")) == self.id
         assert Location(self.init_data) == Location(response_body)
 
-    @pytest.mark.parametrize("value", [-1, 0, 9999])
+    @pytest.mark.parametrize("value", [-1, 0, 9999, -1000])
     def test_get_by_id_negative(self, value):
         response_body = Locations.get_by_id(value)
         assert response_body is None
